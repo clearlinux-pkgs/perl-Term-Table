@@ -1,3 +1,12 @@
+0.008     2017-03-17 10:08:18-07:00 America/Los_Angeles
+
+    - Prefer Term::Size::Any over Term::ReadKey
+    - Do not use either if STDOUT is not a terminal
+
+0.007     2017-03-08 20:15:13-08:00 America/Los_Angeles (TRIAL RELEASE)
+
+    - Remove stray line that was setting STDOUT to utf8 (wtf?)
+
 0.006     2017-01-10 21:13:35-08:00 America/Los_Angeles
 
     - Fix rendering issue when all lines are the same length
