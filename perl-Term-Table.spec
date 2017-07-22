@@ -4,7 +4,7 @@
 #
 Name     : perl-Term-Table
 Version  : 0.008
-Release  : 3
+Release  : 4
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.008.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.008.tar.gz
 Summary  : 'Format a header and rows into a table'
@@ -33,6 +33,9 @@ doc components for the perl-Term-Table package.
 %setup -q -n Term-Table-0.008
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
@@ -46,7 +49,7 @@ fi
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -63,13 +66,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/Term/Table.pm
-/usr/lib/perl5/site_perl/5.24.0/Term/Table/Cell.pm
-/usr/lib/perl5/site_perl/5.24.0/Term/Table/CellStack.pm
-/usr/lib/perl5/site_perl/5.24.0/Term/Table/HashBase.pm
-/usr/lib/perl5/site_perl/5.24.0/Term/Table/LineBreak.pm
-/usr/lib/perl5/site_perl/5.24.0/Term/Table/Spacer.pm
-/usr/lib/perl5/site_perl/5.24.0/Term/Table/Util.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table/Cell.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table/CellStack.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table/HashBase.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table/LineBreak.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table/Spacer.pm
+/usr/lib/perl5/site_perl/5.26.0/Term/Table/Util.pm
 
 %files doc
 %defattr(-,root,root,-)
