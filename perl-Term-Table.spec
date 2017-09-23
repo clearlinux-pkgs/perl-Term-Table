@@ -4,7 +4,7 @@
 #
 Name     : perl-Term-Table
 Version  : 0.008
-Release  : 5
+Release  : 6
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.008.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.008.tar.gz
 Summary  : 'Format a header and rows into a table'
@@ -66,13 +66,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/Term/Table.pm
-/usr/lib/perl5/site_perl/5.26.0/Term/Table/Cell.pm
-/usr/lib/perl5/site_perl/5.26.0/Term/Table/CellStack.pm
-/usr/lib/perl5/site_perl/5.26.0/Term/Table/HashBase.pm
-/usr/lib/perl5/site_perl/5.26.0/Term/Table/LineBreak.pm
-/usr/lib/perl5/site_perl/5.26.0/Term/Table/Spacer.pm
-/usr/lib/perl5/site_perl/5.26.0/Term/Table/Util.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table/Cell.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table/CellStack.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table/HashBase.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table/LineBreak.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table/Spacer.pm
+/usr/lib/perl5/site_perl/5.26.1/Term/Table/Util.pm
 
 %files doc
 %defattr(-,root,root,-)
