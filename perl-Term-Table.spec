@@ -4,13 +4,14 @@
 #
 Name     : perl-Term-Table
 Version  : 0.012
-Release  : 11
+Release  : 12
 URL      : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.012.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.012.tar.gz
 Summary  : 'Format a header and rows into a table'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl GPL-1.0
-Requires: perl-Term-Table-doc
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Term-Table-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : perl(Importer)
 
 %description
@@ -21,12 +22,21 @@ This is used by some failing tests to provide diagnostics about what
 has gone wrong. This module is able to generic format rows of data into
 tables.
 
-%package doc
-Summary: doc components for the perl-Term-Table package.
-Group: Documentation
+%package dev
+Summary: dev components for the perl-Term-Table package.
+Group: Development
+Provides: perl-Term-Table-devel = %{version}-%{release}
 
-%description doc
-doc components for the perl-Term-Table package.
+%description dev
+dev components for the perl-Term-Table package.
+
+
+%package license
+Summary: license components for the perl-Term-Table package.
+Group: Default
+
+%description license
+license components for the perl-Term-Table package.
 
 
 %prep
@@ -39,7 +49,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
 ./Build
@@ -54,10 +64,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Term-Table
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Term-Table/LICENSE
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -66,14 +78,23 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Term/Table.pm
-/usr/lib/perl5/site_perl/5.26.1/Term/Table/Cell.pm
-/usr/lib/perl5/site_perl/5.26.1/Term/Table/CellStack.pm
-/usr/lib/perl5/site_perl/5.26.1/Term/Table/HashBase.pm
-/usr/lib/perl5/site_perl/5.26.1/Term/Table/LineBreak.pm
-/usr/lib/perl5/site_perl/5.26.1/Term/Table/Spacer.pm
-/usr/lib/perl5/site_perl/5.26.1/Term/Table/Util.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table/Cell.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table/CellStack.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table/HashBase.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table/LineBreak.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table/Spacer.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Term/Table/Util.pm
 
-%files doc
+%files dev
 %defattr(-,root,root,-)
-%doc /usr/share/man/man3/*
+/usr/share/man/man3/Term::Table.3
+/usr/share/man/man3/Term::Table::Cell.3
+/usr/share/man/man3/Term::Table::CellStack.3
+/usr/share/man/man3/Term::Table::HashBase.3
+/usr/share/man/man3/Term::Table::LineBreak.3
+/usr/share/man/man3/Term::Table::Util.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Term-Table/LICENSE
