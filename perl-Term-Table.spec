@@ -78,13 +78,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table.pm
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table/Cell.pm
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table/CellStack.pm
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table/HashBase.pm
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table/LineBreak.pm
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table/Spacer.pm
-/usr/lib/perl5/vendor_perl/5.28.1Term/Table/Util.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table/Cell.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table/CellStack.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table/HashBase.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table/LineBreak.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table/Spacer.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Term/Table/Util.pm
 
 %files dev
 %defattr(-,root,root,-)
