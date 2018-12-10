@@ -1,5 +1,5 @@
 PKG_NAME := perl-Term-Table
-URL = http://search.cpan.org/CPAN/authors/id/E/EX/EXODIST/Term-Table-0.012.tar.gz
+URL = https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.013.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
