@@ -4,10 +4,10 @@
 #
 Name     : perl-Term-Table
 Version  : 0.013
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.013.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.013.tar.gz
-Summary  : 'Format a header and rows into a table'
+Summary  : Format a header and rows into a table
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Term-Table-license = %{version}-%{release}
@@ -26,6 +26,7 @@ tables.
 Summary: dev components for the perl-Term-Table package.
 Group: Development
 Provides: perl-Term-Table-devel = %{version}-%{release}
+Requires: perl-Term-Table = %{version}-%{release}
 
 %description dev
 dev components for the perl-Term-Table package.
