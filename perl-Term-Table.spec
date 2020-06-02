@@ -4,7 +4,7 @@
 #
 Name     : perl-Term-Table
 Version  : 0.015
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.015.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.015.tar.gz
 Summary  : 'Format a header and rows into a table'
@@ -106,10 +106,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table/Cell.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table/CellStack.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table/HashBase.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table/LineBreak.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table/Spacer.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Term/Table/Util.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table/Cell.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table/CellStack.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table/HashBase.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table/LineBreak.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table/Spacer.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Term/Table/Util.pm
