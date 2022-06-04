@@ -4,12 +4,13 @@
 #
 Name     : perl-Term-Table
 Version  : 0.016
-Release  : 29
+Release  : 30
 URL      : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.016.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.016.tar.gz
 Summary  : 'Format a header and rows into a table'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Term-Table-license = %{version}-%{release}
 Requires: perl-Term-Table-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Importer)
@@ -30,6 +31,14 @@ Requires: perl-Term-Table = %{version}-%{release}
 
 %description dev
 dev components for the perl-Term-Table package.
+
+
+%package license
+Summary: license components for the perl-Term-Table package.
+Group: Default
+
+%description license
+license components for the perl-Term-Table package.
 
 
 %package perl
@@ -67,6 +76,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Term-Table
+cp %{_builddir}/Term-Table-0.016/LICENSE %{buildroot}/usr/share/package-licenses/perl-Term-Table/3751f685eb3de05ab33c37bf12cee5ade6eec1f9
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -89,12 +100,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Term::Table::LineBreak.3
 /usr/share/man/man3/Term::Table::Util.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Term-Table/3751f685eb3de05ab33c37bf12cee5ade6eec1f9
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table/Cell.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table/CellStack.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table/HashBase.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table/LineBreak.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table/Spacer.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Term/Table/Util.pm
+/usr/lib/perl5/*
