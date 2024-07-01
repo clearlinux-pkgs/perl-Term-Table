@@ -7,7 +7,7 @@
 #
 Name     : perl-Term-Table
 Version  : 0.018
-Release  : 36
+Release  : 37
 URL      : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.018.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.018.tar.gz
 Summary  : 'Format a header and rows into a table'
