@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : perl-Term-Table
-Version  : 0.020
-Release  : 38
-URL      : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.020.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.020.tar.gz
+Version  : 0.022
+Release  : 45
+URL      : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.022.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Term-Table-0.022.tar.gz
 Summary  : 'Format a header and rows into a table'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -55,10 +55,10 @@ perl components for the perl-Term-Table package.
 
 
 %prep
-%setup -q -n Term-Table-0.020
-cd %{_builddir}/Term-Table-0.020
+%setup -q -n Term-Table-0.022
+cd %{_builddir}/Term-Table-0.022
 pushd ..
-cp -a Term-Table-0.020 buildavx2
+cp -a Term-Table-0.022 buildavx2
 popd
 
 %build
